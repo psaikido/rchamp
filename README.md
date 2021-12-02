@@ -33,7 +33,7 @@
     `fdisk /dev/sda`  
     `mktable`  
     `g`  
-    `mkpart` --and choose start, end and filetype, 'linux-swap' for the swap partition
+    `mkpart` --and choose start, end and filetype, 'linux-swap' for the swap partition  
     `set 1 boot on`  
     `set 2 bios_grub on`  
     `set 3 swap on`  
@@ -84,8 +84,8 @@
     25.fstab.sh
     
     
-- Get the scripts onto the mount point, either
-    `cp -r /rchamp /mnt` -- in virtualbox or 
+- Get the scripts onto the mount point, either  
+    `cp -r /rchamp /mnt` -- in virtualbox or   
     `git clone https://bitbucket.org/psaikido/dotfiles`  
     `cp -r ~/dotfiles /mnt`  
 
@@ -94,7 +94,7 @@
     `arch-chroot /mnt`  
 
 
-- EFI create a swapfile
+- EFI create a swapfile  
     `dd if=/dev/zero of=/swapfile bs=1M count=1024 status=progress`  
     `chmod 600 /swapfile`  
     `mkswap /swapfile`  
