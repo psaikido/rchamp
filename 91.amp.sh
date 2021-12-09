@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #https://ostechnix.com/install-apache-mariadb-php-lamp-stack-on-arch-linux-2016/
-sudo pacman -S apache php php-apache
+sudo pacman -S apache mysql php7 php7-apache phpmyadmin
+sudo systemctl enable httpd
+sudo systemctl enable mysql
 
 #sudo setfacl -m "u:http:--x" /home/hughie
 #chmod 775 -R ~/public_html
@@ -18,12 +20,8 @@ sudo pacman -S apache php php-apache
 #Place at the end of the include list
 #Include conf/extra/php_module.conf
 
-sudo pacman -S mysql
-
-sudo pacman -S php7-apache
 sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 sudo mysql_secure_installation
-sudo pacman -S phpmyadmin
 #edit /etc/php/php.ini
 #uncomment bz2, curl, iconf, mysqli, pdo_mysql
 #ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('root');

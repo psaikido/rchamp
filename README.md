@@ -77,25 +77,17 @@
 
 
 - Users & Groups  
-    `passwd`  
-    `useradd -mG wheel [user]`  
-    `passwd [user]`  
-    `visudo`  -- uncomment the line with '%wheel ALL'  
-
-
-- Exit and reboot  
-    `exit`  
-    `umount -a`  
-    `reboot`  -- (take out usb)
+    65.users.md
 
 
 - Login to new system and install i3 etc.
-    70.i3.sh
+    70.gui.sh
 
 
 - SymLinks  
-    80.dirs.sh
+    80.configs.md
 
 
-- [personalised configs](90.personalisation.md)  
+- personalised configs  
+    80.personalisation.md  
 
