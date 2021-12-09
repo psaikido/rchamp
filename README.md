@@ -1,4 +1,4 @@
-## rchamp on virtualbox install
+## rchamp installation
 
 -- The goal here is to install archlinux (in virtualbox, an EFI system or an MBR system) with the i3 tiling window manager.  
 -- On top of this there will be my neovim preferences and personal tweaks to run a LAMP stack.  
@@ -12,38 +12,29 @@
 -- The notes here are turned into runable shell scripts split up into stages to handle the differences in target systems.
 -- Boot a usb arch iso and:
 
-- initialise
-    10.init.sh
-    
-    
 - Get an internet connection
-    11.wifi.sh
     `iwctl`  
     `device list`  
     `station wlan0 scan`  
     `station wlan0 get-networks`  
     `station wlan0 connect [network name]`  
 
-
-- Sync time and pacman
-    12.sync.sh
-
  
+- initialise
+    `git clone https://bitbucket.org/psaikido/dotfiles`  
+    10.init.sh
+    
+
 - Partitioning (manual)
     15.partitioning.md
 
 
-- Install base system with pacstrap
-    20.pacstrap.sh
+- Install base system with pacstrap and create fstab
+    20.pacstrap.fstab.sh
 
 
-- Make the file system table
-    25.fstab.sh
-    
-    
 - Get the scripts onto the mount point, either  
     `cp -r /rchamp /mnt` -- in virtualbox or   
-    `git clone https://bitbucket.org/psaikido/dotfiles`  
     `cp -r ~/dotfiles /mnt`  
 
 
@@ -85,9 +76,8 @@
 
 
 - SymLinks  
-    80.configs.md
+    80.configs.sh
 
 
-- personalised configs  
-    80.personalisation.md  
-
+- Apache, php, mysql
+    90.amp.sh
