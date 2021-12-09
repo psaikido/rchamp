@@ -8,8 +8,9 @@
 [Ermanno Ferrari tutorial](https://youtu.be/8T0vvf1xm58)  
 
 -- virtualbox shared folder linking host ~/dotfiles/rchamp with /rchamp on guest  
--- On metal installations git clone https://bitbucket.org/psaikido/dotfiles  
+
 -- The notes here are turned into runable shell scripts split up into stages to handle the differences in target systems.  
+
 -- Boot a usb arch iso and:  
 
 - Get an internet connection  
@@ -21,7 +22,7 @@
 
  
 - initialise  
-    `git clone https://bitbucket.org/psaikido/dotfiles`  
+    `git clone https://bitbucket.org/psaikido/rchamp`  
     10.init.sh
     
 
