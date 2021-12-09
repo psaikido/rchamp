@@ -7,12 +7,12 @@
 [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)  
 [Ermanno Ferrari tutorial](https://youtu.be/8T0vvf1xm58)  
 
--- virtualbox shared folder linking host ~/dotfiles/rchamp with /rchamp on guest
--- On metal installations git clone https://bitbucket.org/psaikido/dotfiles
--- The notes here are turned into runable shell scripts split up into stages to handle the differences in target systems.
--- Boot a usb arch iso and:
+-- virtualbox shared folder linking host ~/dotfiles/rchamp with /rchamp on guest  
+-- On metal installations git clone https://bitbucket.org/psaikido/dotfiles  
+-- The notes here are turned into runable shell scripts split up into stages to handle the differences in target systems.  
+-- Boot a usb arch iso and:  
 
-- Get an internet connection
+- Get an internet connection  
     `iwctl`  
     `device list`  
     `station wlan0 scan`  
@@ -20,7 +20,7 @@
     `station wlan0 connect [network name]`  
 
  
-- initialise
+- initialise  
     `git clone https://bitbucket.org/psaikido/dotfiles`  
     10.init.sh
     
