@@ -25,15 +25,15 @@
  
 - initialise  
     `git clone https://bitbucket.org/psaikido/rchamp`  
-    10.init.sh
+    scripts/on-usb/10.init.sh
     
 
 - Partitioning (manual)
-    15.partitioning.md
+    scripts/on-usb/15.partitioning.md
 
 
 - Install base system with pacstrap and create fstab
-    20.pacstrap.fstab.sh
+    scripts/on-usb/20.pacstrap.fstab.sh
 
 
 - Get the scripts onto the mount point, either  
@@ -55,32 +55,32 @@
 
 
 - Localisation  
-    30.localisation.sh  
+    scripts/on-usb/30.localisation.sh  
 
 
 - Install base   
-    40.base.sh  
+    scripts/on-usb/40.base.sh  
 
 
 - MBR: grub  
-    50.grub.mbr.sh  
+    scripts/on-usb/50.grub.mbr.sh  
 
 
 - EFI: grub  
-    60.grub.efi.sh  
+    scripts/on-usb/60.grub.efi.sh  
 
 
 - Users & Groups  
-    65.users.md
+    scripts/on-usb/65.users.md
 
 
 - Login to new system and install i3 etc.
-    70.gui.sh
+    scripts/on-usb/70.gui.sh
 
 
 - SymLinks  
-    80.configs.sh
+    scripts/on-metal/80.configs.sh
 
 
 - Apache, php, mysql
-    90.amp.sh
+    scripts/on-metal/90.amp.sh
