@@ -1,15 +1,17 @@
 ## rchamp installation
 
 -- The goal here is to install archlinux (in virtualbox, an EFI system or an MBR system) with the i3 tiling window manager.  
+
 -- On top of this there will be my neovim preferences and personal tweaks to run a LAMP stack.  
--- Arch is the 'L' of LAMP giving us arch + amp, archamp or rchamp.
+
+-- Arch is the 'L' of LAMP giving us arch + amp, 'archamp' or 'rchamp'.
 
 [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)  
 [Ermanno Ferrari tutorial](https://youtu.be/8T0vvf1xm58)  
 
--- virtualbox shared folder linking host ~/dotfiles/rchamp with /rchamp on guest  
+-- virtualbox shared folder linking host ~/rchamp with /rchamp on guest  
 
--- The notes here are turned into runable shell scripts split up into stages to handle the differences in target systems.  
+-- The notes here are turned into runable shell scripts (dir=./scripts) split up into stages to handle the differences in target systems.  
 
 -- Boot a usb arch iso and:  
 
