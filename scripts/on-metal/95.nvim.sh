@@ -14,5 +14,5 @@ fi
 
 sudo pacman -S python python-pip xclip nodejs npm
 pip3 install --upgrade pynvim ueberzug
-npm install -g neovim
+sudo npm install -g neovim
   
