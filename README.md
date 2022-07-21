@@ -4,7 +4,7 @@
 
 -- On top of this there will be my neovim preferences and personal tweaks to run a LAMP stack.  
 
--- Arch is the 'L' of LAMP giving us arch + amp, 'archamp' or 'rchamp'.
+-- Arch is the 'L' for 'linux' of 'LAMP' giving us arch + amp, 'archamp' or 'rchamp'.
 
 [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)  
 [Ermanno Ferrari tutorial](https://youtu.be/8T0vvf1xm58)  
@@ -21,10 +21,13 @@
     `station wlan0 scan`  
     `station wlan0 get-networks`  
     `station wlan0 connect [network name]`  
+    `quit`
 
  
 - initialise  
     `git clone https://bitbucket.org/psaikido/rchamp`  
+    `git clone https://bitbucket.org/psaikido/dotfiles`  
+    `git clone https://bitbucket.org/psaikido/neovim`  
     scripts/on-usb/10.init.sh
     
 
@@ -39,6 +42,7 @@
 - Get the scripts onto the mount point, either  
     `cp -r /rchamp /mnt` -- in virtualbox or   
     `cp -r ~/dotfiles /mnt`  
+    `cp -r ~/neovim /mnt`  
 
 
 - Move onto the base system
@@ -75,7 +79,7 @@
 
 
 - Login to new system and install i3 etc.
-    scripts/on-usb/70.gui.sh
+    scripts/on-metal/70.gui.sh
 
 
 - SymLinks  
@@ -84,3 +88,7 @@
 
 - Apache, php, mysql
     scripts/on-metal/90.amp.sh
+
+- Neovim
+    scripts/on-metal/95.nvim.sh
+    scripts/on-metal/96.nvim.md
