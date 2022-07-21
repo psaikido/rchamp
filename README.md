@@ -25,9 +25,9 @@
 
  
 - initialise  
+    `pacman -Sy`
+    `pacman -S git`
     `git clone https://bitbucket.org/psaikido/rchamp`  
-    `git clone https://bitbucket.org/psaikido/dotfiles`  
-    `git clone https://bitbucket.org/psaikido/neovim`  
     scripts/on-usb/10.init.sh
     
 
@@ -41,8 +41,6 @@
 
 - Get the scripts onto the mount point, either  
     `cp -r /rchamp /mnt` -- in virtualbox or   
-    `cp -r ~/dotfiles /mnt`  
-    `cp -r ~/neovim /mnt`  
 
 
 - Move onto the base system
@@ -74,8 +72,8 @@
     scripts/on-usb/60.grub.efi.sh  
 
 
-- Users & Groups  
-    scripts/on-usb/65.users.md
+- Users & Groups
+    follow steps in scripts/on-usb/65.users.md
 
 
 - Login to new system and install i3 etc.
