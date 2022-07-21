@@ -9,7 +9,7 @@ if test -e "$FILE"; then
 else
     mkdir /home/hughie/.config/nvim
     ln -s /home/hughie/neovim/lua /home/hughie/.config/nvim/lua
-    ln -s /home/hughie/neovim/init.lua /home/hughie/.config/nvim/init.lua
+    ln -s /home/hughie/neovim/init.vim /home/hughie/.config/nvim/init.vim
 fi
 
 sudo pacman -S python python-pip xclip nodejs npm

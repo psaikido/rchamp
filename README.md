@@ -77,6 +77,7 @@
 
 
 - Login to new system and install i3 etc.
+    NB: run from ~
     scripts/on-metal/70.gui.sh
 
 
