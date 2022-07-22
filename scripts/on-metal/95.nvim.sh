@@ -12,7 +12,8 @@ else
     ln -s /home/hughie/neovim/init.vim /home/hughie/.config/nvim/init.vim
 fi
 
-sudo pacman -S python python-pip xclip nodejs npm
+sudo pacman -S python python-pip xclip nodejs npm w3m feh
 pip3 install --upgrade pynvim ueberzug
 sudo npm install -g neovim
+yay -S ranger python-pynvim ueberzug nerd-fonts font-awesome
   
