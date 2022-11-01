@@ -5,6 +5,10 @@ sudo pacman -S apache mysql php7 php7-apache phpmyadmin
 sudo systemctl enable httpd
 sudo systemctl enable mysql
 
+NB: 20221030
+This was how it used to be done. Now to get mysql 5.5.62 we have to do it differently.
+yay -S mysql55
+
 #sudo setfacl -m "u:http:--x" /home/hughie
 #chmod 775 -R ~/sites/chanadmin
 
