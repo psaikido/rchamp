@@ -1,9 +1,9 @@
 #!/bin/bash
 
-#git clone https://bitbucket.org/psaikido/dotfiles
-#git clone https://gitlab.com/dwt1/wallpapers  
+git clone https://bitbucket.org/psaikido/dotfiles
+git clone https://gitlab.com/dwt1/wallpapers  
 
-home='/home/hughie/test'
+home='/home/hughie'
 
 FILE=$home/.xinitrc
 if test -f "$FILE"; then
@@ -44,3 +44,16 @@ if test -f "$FILE"; then
 fi
 mkdir $home/.tmux
 ln -s $home/dotfiles/configs/tmux.conf $home/.tmux.conf
+
+# ranger
+ranger --copy-config=all
+FILE=$home/.config/ranger/rc.conf
+if test -f "$FILE"; then
+    mv $FILE $FILE.bk
+fi
+FILE=$home/.config/ranger/rifle.conf
+if test -f "$FILE"; then
+    mv $FILE $FILE.bk
+fi
+ln -s $home/dotfiles/configs/rc.conf $home/.config/ranger/rc.conf
+ln -s $home/dotfiles/configs/rifle.conf $home/.config/ranger/rifle.conf
