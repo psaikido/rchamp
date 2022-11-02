@@ -39,7 +39,7 @@ if test -f "$FILE"; then
 fi
 mkdir $home/.config/i3blocks
 ln -s $home/dotfiles/configs/i3blocks.conf $home/.config/i3blocks/i3blocks.conf
-ln -s $home/dotfiles/i3block-scripts $home/.config/scripts
+ln -s $home/dotfiles/i3block-scripts $home/.local/bin/i3block-scripts
 
 FILE=$home/.tmux.conf
 if test -f "$FILE"; then
