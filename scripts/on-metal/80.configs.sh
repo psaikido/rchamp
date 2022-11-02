@@ -20,6 +20,12 @@ if test -f "$FILE"; then
 fi
 ln -s $home/dotfiles/configs/bash_aliases $home/.bash_aliases
 
+FILE=$home/.bash_profile
+if test -f "$FILE"; then
+    mv $FILE $FILE.bk
+fi
+ln -s $home/dotfiles/configs/bash_profile $home/.bash_profile
+
 FILE=$home/.config/i3/config
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
