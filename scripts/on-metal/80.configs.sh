@@ -1,8 +1,5 @@
 #!/bin/bash
 
-git clone https://bitbucket.org/psaikido/dotfiles
-git clone https://gitlab.com/dwt1/wallpapers  
-
 home='/home/hughie'
 
 FILE=$home/.xinitrc
