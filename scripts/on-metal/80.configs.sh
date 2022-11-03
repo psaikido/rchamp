@@ -60,3 +60,11 @@ if test -f "$FILE"; then
 fi
 ln -s $home/dotfiles/configs/rc.conf $home/.config/ranger/rc.conf
 ln -s $home/dotfiles/configs/rifle.conf $home/.config/ranger/rifle.conf
+
+# neomutt
+FILE=$home/.config/mutt/muttrc
+if test -f "$FILE"; then
+    mv $FILE $FILE.bk
+fi
+ln -s $home/dotfiles/mutt $home/.config/mutt
+
