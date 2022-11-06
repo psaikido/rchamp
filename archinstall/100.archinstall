@@ -1,0 +1,43 @@
+#!/bin/bash
+
+home='/home/hughie'
+cd $home
+
+# 40.base.sh
+pacman -Syyy 
+sudo reflector -c 'United Kingdom' -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+pacman -S grub efibootmgr networkmanager network-manager-applet dialog mtools dosfstools base-devel linux-headers bluez bluez-utils cups alsa-utils pulseaudio pulseaudio-bluetooth git reflector xdg-utils xdg-user-dirs rsync acpi tmux
+
+systemctl enable NetworkManager
+systemctl enable sshd
+systemctl enable reflector.timer
+
+# 70.gui.sh
+sudo pacman -S xorg xorg-xinit xf86-video-intel i3-gaps i3lock i3status i3blocks dmenu alacritty neovim rofi ranger firefox lua nitrogen picom ntfs-3g libdvdread fzf python3 ruby2.7 rubygems noto-fonts-cjk noto-fonts thunar pass neomutt fzf ripgrep hugo xclip
+
+# yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd /home/hughie
+
+yay -S mutt-wizard brave-bin
+git clone https://bitbucket.org/psaikido/dotfiles $home
+git clone https://gitlab.com/dwt1/wallpapers $home
+
+# neovim
+git clone https://bitbucket.org/psaikido/neovim
+
+FILE=/home/hughie/.config/nvim
+if test -e "$FILE"; then
+    mv $FILE $FILE.bk
+else
+    mkdir /home/hughie/.config/nvim
+    ln -s /home/hughie/neovim/lua /home/hughie/.config/nvim/lua
+    ln -s /home/hughie/neovim/init.vim /home/hughie/.config/nvim/init.vim
+fi
+
+sudo pacman -S python python-pip xclip nodejs npm w3m feh
+pip3 install --upgrade pynvim ueberzug
+sudo npm install -g neovim
+yay -S ranger python-pynvim ueberzug nerd-fonts font-awesome
