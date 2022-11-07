@@ -13,7 +13,7 @@ systemctl enable sshd
 systemctl enable reflector.timer
 
 # 70.gui.sh
-sudo pacman -S alacritty bat dmenu exa firefox fzf fzf hugo i3-gaps i3blocks i3lock i3status libdvdread lua neomutt neovim nitrogen noto-fonts noto-fonts-cjk ntfs-3g pass picom python3 ranger ripgrep rofi ruby2.7 rubygems starship thunar xclip xf86-video-intel xorg xorg-xinit
+sudo pacman -S alacritty bat dmenu exa firefox fzf fzf hugo i3-gaps i3blocks i3lock i3status libdvdread lua neomutt neovim nitrogen noto-fonts noto-fonts-cjk ntfs-3g pass picom procs python3 ranger ripgrep rofi ruby2.7 rubygems starship thunar xclip xf86-video-intel xorg xorg-xinit
 
 # yay
 git clone https://aur.archlinux.org/yay.git
