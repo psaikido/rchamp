@@ -17,6 +17,7 @@ sudo pacman -S alacritty dmenu firefox fzf fzf hugo i3-gaps i3blocks i3lock i3st
 
 # yay
 git clone https://aur.archlinux.org/yay.git
+chown hughie:root -R ./yay
 cd yay
 sudo -u hughie makepkg -si
 cd /home/hughie
@@ -24,4 +25,5 @@ cd /home/hughie
 yay -u hughie -S mutt-wizard brave-bin
 git clone https://bitbucket.org/psaikido/dotfiles $home
 git clone https://gitlab.com/dwt1/wallpapers $home
+chown hughie:hughie -R ./dotfiles ./wallpapers
 

@@ -45,6 +45,7 @@ if test -f "$FILE"; then
 fi
 mkdir $home/.config/i3blocks
 ln -s $home/dotfiles/configs/i3blocks.conf $home/.config/i3blocks/i3blocks.conf
+sudo -u hughie mkdir $home/.local/bin
 ln -s $home/dotfiles/i3block-scripts $home/.local/bin/i3block-scripts
 
 FILE=$home/.tmux.conf
@@ -74,3 +75,4 @@ if test -f "$FILE"; then
 fi
 ln -s $home/dotfiles/mutt $home/.config/mutt
 
+chown hughie:hughie -R $home/.config

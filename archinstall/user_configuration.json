@@ -1,0 +1,33 @@
+{
+    "config_version": "2.5.1",
+    "debug": false,
+    "desktop-environment": "i3",
+    "gfx_driver": "All open-source (default)",
+    "harddrives": [
+        "/dev/sda"
+    ],
+    "keyboard-layout": "uk",
+    "mirror-region": {
+        "United Kingdom": {
+            "https://archlinux.uk.mirror.allworldit.com/archlinux/$repo/os/$arch": true,
+            "https://mirror.bytemark.co.uk/archlinux/$repo/os/$arch": true,
+            "https://mirrors.gethosted.online/archlinux/$repo/os/$arch": true,
+            "https://mirrors.melbourne.co.uk/archlinux/$repo/os/$arch": true,
+            "https://www.mirrorservice.org/sites/ftp.archlinux.org/$repo/os/$arch": true,
+            "https://mirror.netweaver.uk/archlinux/$repo/os/$arch": true,
+            "https://lon.mirror.rackspace.com/archlinux/$repo/os/$arch": true,
+            "https://mirrors.ukfast.co.uk/sites/archlinux.org/$repo/os/$arch": true,
+            "https://mirror.cov.ukservers.com/archlinux/$repo/os/$arch": true
+        }
+    },
+    "no_pkg_lookups": false,
+    "offline": false,
+    "packages": ["git", "vim"],
+    "profile": {
+        "path": "/usr/lib/python3.10/site-packages/archinstall/profiles/destop.py"
+    },
+    "script": "guided",
+    "silent": false,
+    "sys-language": "en_GB.UTF-8",
+    "version": "2.5.1"
+}
