@@ -2,7 +2,6 @@
 
 git clone https://bitbucket.org/psaikido/neovim /home/hughie/neovim
 
-
 FILE=/home/hughie/.config/nvim
 if test -e "$FILE"; then
     mv $FILE $FILE.bk
@@ -12,8 +11,8 @@ else
     ln -s /home/hughie/neovim/init.vim /home/hughie/.config/nvim/init.vim
 fi
 
-sudo pacman -S python python-pip xclip nodejs npm w3m feh
+pacman -S python python-pip xclip nodejs npm w3m feh
 pip3 install --upgrade pynvim ueberzug
-sudo npm install -g neovim
-yay -S ranger python-pynvim ueberzug nerd-fonts font-awesome
+npm install -g neovim
+sudo -u hughie yay -S ranger python-pynvim ueberzug nerd-fonts font-awesome
   

@@ -30,13 +30,13 @@ FILE=$home/.config/alacritty/alacritty.yml
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
 fi
+mkdir $home/.config/alacritty
 ln -s $home/dotfiles/configs/alacritty.yml $home/.config/alacritty/alacritty.yml
 
 FILE=$home/.config/i3/config
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
 fi
-mkdir $home/.config/i3
 ln -s $home/dotfiles/configs/i3.config $home/.config/i3/config
 
 FILE=$home/.config/i3blocks/i3blocks.conf
