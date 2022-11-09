@@ -1,4 +1,11 @@
 #!/bin/bash
+#
+# Boot up a machine with a live iso of archlinux.
+# Run their archinstall script.
+# After chrooting, change directory into /home/hughie.
+# Install git.
+# git clone https://bitbucket.org/psaikido/rchamp.
+# Run these three scripts.
 
 home='/home/hughie'
 cd $home
