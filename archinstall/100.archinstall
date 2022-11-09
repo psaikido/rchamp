@@ -5,15 +5,72 @@ cd $home
 
 # 40.base.sh
 pacman -Syyy 
-sudo reflector -c 'United Kingdom' -a 6 --sort rate --save /etc/pacman.d/mirrorlist
-pacman -S acpi alsa-utils base-devel bluez bluez-utils cups dialog dosfstools efibootmgr git linux-headers mtools network-manager-applet networkmanager pulseaudio pulseaudio-bluetooth reflector rsync tmux xdg-user-dirs xdg-utils
+reflector -c 'United Kingdom' -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+
+pacman -S \
+acpi \
+alsa-utils \
+base-devel \
+bluez \
+bluez-utils \
+cups \
+dialog \
+dosfstools \
+efibootmgr \
+git \
+linux-headers \
+mtools \
+network-manager-applet \
+networkmanager \
+pulseaudio \
+pulseaudio-bluetooth \
+reflector \
+rsync \
+tmux \
+xdg-user-dirs \
+xdg-utils
 
 systemctl enable NetworkManager
 systemctl enable sshd
 systemctl enable reflector.timer
 
 # 70.gui.sh
-sudo pacman -S alacritty bat dmenu exa firefox fzf fzf hugo i3-gaps i3blocks i3lock i3status libdvdread lua neomutt neovim nitrogen noto-fonts noto-fonts-cjk ntfs-3g pass picom procs python3 ranger ripgrep rofi ruby2.7 rubygems starship thunar xclip xf86-video-intel xorg xorg-xinit
+pacman -S \
+alacritty \
+bat \
+dmenu \
+exa \
+firefox \
+fzf \
+fzf \
+hugo \
+i3-gaps \
+i3blocks \
+i3lock \
+i3status \
+libdvdread \
+lua \
+neomutt \
+neovim \
+nitrogen \
+noto-fonts \
+noto-fonts-cjk \
+ntfs-3g \
+pass \
+picom \
+procs \
+python3 \
+ranger \
+ripgrep \
+rofi \
+ruby2.7 \
+rubygems \
+starship \
+thunar \
+xclip \
+xf86-video-intel \
+xorg \
+xorg-xinit
 
 # yay
 git clone https://aur.archlinux.org/yay.git
@@ -23,7 +80,6 @@ sudo -u hughie makepkg -si
 cd /home/hughie
 
 yay -u hughie -S mutt-wizard brave-bin
-git clone https://bitbucket.org/psaikido/dotfiles $home
-git clone https://gitlab.com/dwt1/wallpapers $home
-chown hughie:hughie -R ./dotfiles ./wallpapers
+
+chown hughie:hughie -R /home/hughie
 

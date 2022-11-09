@@ -2,6 +2,9 @@
 
 home='/home/hughie'
 
+git clone https://bitbucket.org/psaikido/dotfiles $home
+git clone https://gitlab.com/dwt1/wallpapers $home
+
 FILE=$home/.xinitrc
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
@@ -37,6 +40,7 @@ FILE=$home/.config/i3/config
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
 fi
+sudo -u hughie mkdir $home/.config/i3
 ln -s $home/dotfiles/configs/i3.config $home/.config/i3/config
 
 FILE=$home/.config/i3blocks/i3blocks.conf
@@ -52,7 +56,7 @@ FILE=$home/.tmux.conf
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
 fi
-mkdir $home/.tmux
+sudo -u hughie mkdir $home/.tmux
 ln -s $home/dotfiles/configs/tmux.conf $home/.tmux.conf
 
 # ranger
@@ -75,4 +79,4 @@ if test -f "$FILE"; then
 fi
 ln -s $home/dotfiles/mutt $home/.config/mutt
 
-chown hughie:hughie -R $home/.config
+chown hughie:hughie -R $home/*
