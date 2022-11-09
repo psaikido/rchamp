@@ -59,6 +59,7 @@ ntfs-3g \
 pass \
 picom \
 procs \
+python \
 python3 \
 ranger \
 ripgrep \
@@ -77,9 +78,9 @@ git clone https://aur.archlinux.org/yay.git
 chown hughie:root -R ./yay
 cd yay
 sudo -u hughie makepkg -si
-cd /home/hughie
+cd $home
 
 yay -u hughie -S mutt-wizard brave-bin
 
-chown hughie:hughie -R /home/hughie
+chown hughie:hughie -R $home 
 

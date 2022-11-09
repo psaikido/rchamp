@@ -1,20 +1,31 @@
 #!/bin/bash
 
-git clone https://bitbucket.org/psaikido/neovim /home/hughie/neovim
-chown hughie:hughie -R ./neovim
-mkdir /home/hughie/.config
+home='/home/hughie'
 
-FILE=/home/hughie/.config/nvim
+git clone https://bitbucket.org/psaikido/neovim $home/neovim
+
+mkdir $home/.config
+
+FILE=$home/.config/nvim
 if test -e "$FILE"; then
     mv $FILE $FILE.bk
 else
-    mkdir /home/hughie/.config/nvim
-    ln -s /home/hughie/neovim/lua /home/hughie/.config/nvim/lua
-    ln -s /home/hughie/neovim/init.vim /home/hughie/.config/nvim/init.vim
+    mkdir $home/.config/nvim
+    ln -s $home/neovim/lua $home/.config/nvim/lua
+    ln -s $home/neovim/init.vim $home/.config/nvim/init.vim
 fi
 
-pacman -S python python-pip xclip nodejs npm w3m feh
+pacman -S 
+feh \
+nodejs \
+npm \
+python-pip \
+w3m \
+xclip 
+
 sudo -u hughie pip3 install --upgrade pynvim 
 npm install -g neovim
-sudo -u hughie yay -S ranger python-pynvim nerd-fonts font-awesome
+sudo -u hughie yay -S ranger python-pynvim nerd-fonts ttf-font-awesome-5
+
+chown hughie:hughie -R $home
   
