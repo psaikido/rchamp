@@ -2,9 +2,9 @@
 
 home='/home/hughie'
 
-git clone https://bitbucket.org/psaikido/dotfiles
-git clone https://bitbucket.org/psaikido/bin
-git clone https://gitlab.com/dwt1/wallpapers
+git clone https://bitbucket.org/psaikido/dotfiles $home/dotfiles
+#git clone https://bitbucket.org/psaikido/bin
+git clone https://gitlab.com/dwt1/wallpapers $home/wallpapers
 
 FILE=$home/.xinitrc
 if test -f "$FILE"; then
