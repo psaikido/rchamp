@@ -26,7 +26,6 @@ pulseaudio \
 pulseaudio-bluetooth \
 reflector \
 rsync \
-tmux \
 xdg-user-dirs \
 xdg-utils
 
@@ -68,6 +67,7 @@ ruby2.7 \
 rubygems \
 starship \
 thunar \
+tmux \
 xclip \
 xf86-video-intel \
 xorg \
