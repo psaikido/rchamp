@@ -83,4 +83,10 @@ if test -f "$FILE"; then
 fi
 ln -s $home/dotfiles/mutt $home/.config/mutt
 
+FILE=$home/.local/bin/remaps
+if test -f "$FILE"; then
+    mv $FILE $FILE.bk
+fi
+ln -s ~/dotfiles/local/bin/remaps ~/.local/bin/remaps
+
 chown hughie:hughie -R $home
