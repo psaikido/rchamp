@@ -55,6 +55,7 @@ i3blocks \
 i3lock \
 i3status \
 libdvdread \
+jre-openjdk \
 lua \
 neomutt \
 neovim \
