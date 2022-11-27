@@ -44,6 +44,7 @@ systemctl enable reflector.timer
 pacman -S \
 alacritty \
 bat \
+chromium \
 dmenu \
 exa \
 firefox \
@@ -57,6 +58,7 @@ i3status \
 libdvdread \
 jre-openjdk \
 lua \
+lxappearance \
 neomutt \
 neovim \
 nitrogen \
