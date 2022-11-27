@@ -1,5 +1,7 @@
 ## rchamp installation
 
+-- Get latest archiso (currently archlinux-2022.11.01-x86_64.iso) onto a usb.
+
 -- The goal here is to install archlinux (in virtualbox, an EFI system or an MBR system) with the i3 tiling window manager.  
 
 -- On top of this there will be my neovim preferences and personal tweaks to run a LAMP stack.  
@@ -9,9 +11,7 @@
 [Arch Installation Guide](https://wiki.archlinux.org/title/Installation_guide)  
 [Ermanno Ferrari tutorial](https://youtu.be/8T0vvf1xm58)  
 
--- virtualbox shared folder linking host ~/rchamp with /rchamp on guest  
-
--- The notes here are turned into runable shell scripts (dir=./scripts) split up into stages to handle the differences in target systems.  
+-- The notes here are turned into runable shell scripts (dir=./scripts-pre-archinstall) split up into stages to handle the differences in target systems. They have been superceded by the triumphant 'archinstall' script from arch themselves.
 
 -- Boot a usb arch iso and:  
 
@@ -28,66 +28,27 @@
     `pacman -Sy`
     `pacman -S git`
     `git clone https://bitbucket.org/psaikido/rchamp`  
-    scripts/on-usb/10.init.sh
-    
 
-- Partitioning (manual)
-    scripts/on-usb/15.partitioning.md
+- Edit the ./rchamp/*.json files.
+- Possibly do an `archinstall --dry-run` to make sure those json files are set up right.
+- Run
+    `archinstall --config ./rchamp/config.json --creds ./rchamp/creds.json --disk-layouts ./rchamp/disk.json`
 
+- After the installer runs it should arch-chroot you in to the new root.
+    `cd /home/hughie`
 
-- Install base system with pacstrap and create fstab
-    scripts/on-usb/20.pacstrap.fstab.sh
+- Either get rchamp from the liveiso you've just come from or get it again with the 'initialise' commands above.
 
+- Run from the new /home/hughie
+    `rchamp/10.archinstall`
+    `rchamp/20.nvim`
+    `rchamp/30.link-configs`
 
-- Get the scripts onto the mount point, either  
-    `cp -r /rchamp /mnt` -- in virtualbox or   
+- Boot and check all is well.
+The plan now is to use the second disk, /dev/sdb, for the home directory
+and the current home (installed on /dev/sda as /home/hughie) as the backups dir.
+We should have sda as the boot, root and backups disk
+and sdb as /home/hughie.
+Twiddle /etc/fstab using lsblk and blkid to set it up.
+Check rchamp/example-fstab.
 
-
-- Move onto the base system
-    `arch-chroot /mnt`  
-
-
-- EFI create a swapfile  
-    `dd if=/dev/zero of=/swapfile bs=1M count=1024 status=progress`  
-    `chmod 600 /swapfile`  
-    `mkswap /swapfile`  
-    `swapon /swapfile`  
-    `vim /etc/fstab`  
-    `/swapfile   none    swap    defaults    0 0`  
-
-
-- Localisation  
-    scripts/on-usb/30.localisation.sh  
-
-
-- Install base   
-    scripts/on-usb/40.base.sh  
-
-
-- MBR: grub  
-    scripts/on-usb/50.grub.mbr.sh  
-
-
-- EFI: grub  
-    scripts/on-usb/60.grub.efi.sh  
-
-
-- Users & Groups
-    follow steps in scripts/on-usb/65.users.md
-
-
-- Login to new system and install i3 etc.
-    NB: run from ~
-    scripts/on-metal/70.gui.sh
-
-
-- SymLinks  
-    scripts/on-metal/80.configs.sh
-
-
-- Apache, php, mysql
-    scripts/on-metal/90.amp.sh
-
-- Neovim
-    scripts/on-metal/95.nvim.sh
-    scripts/on-metal/96.nvim.md

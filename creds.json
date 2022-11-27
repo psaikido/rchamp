@@ -1,4 +1,5 @@
 {
+    "!root-password": "",
     "!users": {
         "!password": "",
         "sudo": true,

@@ -17,13 +17,11 @@ reflector -c 'United Kingdom' -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -S \
 acpi \
 alsa-utils \
-base-devel \
 bluez \
 bluez-utils \
 cups \
 dialog \
 dosfstools \
-efibootmgr \
 git \
 linux-headers \
 mtools \
@@ -33,8 +31,7 @@ pulseaudio \
 pulseaudio-bluetooth \
 reflector \
 rsync \
-xdg-user-dirs \
-xdg-utils
+xdg-user-dirs 
 
 systemctl enable NetworkManager
 systemctl enable sshd
@@ -45,16 +42,11 @@ pacman -S \
 alacritty \
 bat \
 chromium \
-dmenu \
 exa \
 firefox \
 fzf \
 fzf \
 hugo \
-i3-gaps \
-i3blocks \
-i3lock \
-i3status \
 libdvdread \
 jre-openjdk \
 lua \
@@ -80,9 +72,7 @@ thunar \
 tmux \
 xcape \
 xclip \
-xf86-video-intel \
-xorg \
-xorg-xinit
+xorg 
 
 # yay
 git clone https://aur.archlinux.org/yay.git
@@ -91,7 +81,7 @@ cd yay
 sudo -u hughie makepkg -si
 cd $home
 
-yay -u hughie -S mutt-wizard brave-bin
+yay -u hughie -S mutt-wizard brave-beta-bin
 
 chown hughie:hughie -R $home 
 
