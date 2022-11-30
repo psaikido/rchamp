@@ -5,12 +5,14 @@
 # After chrooting, change directory into /home/hughie.
 # Install git.
 # git clone https://bitbucket.org/psaikido/rchamp.
-# Run these three scripts.
+# Run these scripts.
 
 home='/home/hughie'
 cd $home
+mkdir $home/.config
+mkdir $home/.local
 
-# 40.base.sh
+# base.sh
 pacman -Syyy 
 reflector -c 'United Kingdom' -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 
@@ -37,51 +39,4 @@ systemctl enable NetworkManager
 systemctl enable sshd
 systemctl enable reflector.timer
 
-# 70.gui.sh
-pacman -S \
-alacritty \
-bat \
-chromium \
-exa \
-firefox \
-fzf \
-fzf \
-hugo \
-libdvdread \
-jre-openjdk \
-lua \
-lxappearance \
-neomutt \
-neovim \
-nitrogen \
-noto-fonts \
-noto-fonts-cjk \
-ntfs-3g \
-pass \
-picom \
-procs \
-python \
-python3 \
-ranger \
-ripgrep \
-rofi \
-ruby2.7 \
-rubygems \
-starship \
-thunar \
-tmux \
-xcape \
-xclip \
-xorg 
-
-# yay
-git clone https://aur.archlinux.org/yay.git
-chown hughie:root -R ./yay
-cd yay
-sudo -u hughie makepkg -si
-cd $home
-
-yay -u hughie -S mutt-wizard brave-beta-bin
-
 chown hughie:hughie -R $home 
-

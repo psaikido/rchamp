@@ -1,0 +1,50 @@
+#!/bin/bash
+#
+home='/home/hughie'
+cd $home
+
+# gui.sh
+pacman -S \
+alacritty \
+bat \
+chromium \
+exa \
+firefox \
+feh \
+fzf \
+ghostscript \
+hugo \
+jre-openjdk \
+libdvdread \
+lua \
+lxappearance \
+mupdf \
+neomutt \
+nitrogen \
+noto-fonts \
+nodejs \
+npm \
+ntfs-3g \
+pandoc \
+pass \
+picom \
+procs \
+python \
+python3 \
+python-pip \
+ranger \
+ripgrep \
+rofi \
+ruby2.7 \
+rubygems \
+starship \
+thunar \
+tmux \
+w3m \
+xcape \
+xclip \
+xorg  \
+zathura \ 
+zathura-pdf-mupdf 
+
+chown hughie:hughie -R $home 
