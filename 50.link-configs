@@ -4,7 +4,7 @@ home='/home/hughie'
 cd $home
 
 git clone https://bitbucket.org/psaikido/dotfiles $home/dotfiles
-git clone https://bitbucket.org/psaikido/bin $home/bin
+#git clone https://bitbucket.org/psaikido/bin $home/bin
 git clone https://gitlab.com/dwt1/wallpapers $home/wallpapers
 
 FILE=$home/.xinitrc
