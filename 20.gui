@@ -42,11 +42,15 @@ rubygems \
 starship \
 thunar \
 tmux \
+virtualbox \
+virtualbox-guest-iso \
+virtualbox-host-modules-arch \
 w3m \
 xcape \
 xclip \
+xdotool \
 xorg  \
-zathura \ 
+zathura \
 zathura-pdf-mupdf 
 
 chown hughie:hughie -R $home 
