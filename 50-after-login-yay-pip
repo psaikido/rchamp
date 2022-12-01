@@ -3,16 +3,16 @@
 home='/home/hughie'
 cd $home
 
-sudo -u hughie pip3 install --upgrade pynvim 
-sudo -u hughie pip3 install pyyaml
+pip3 install --upgrade pynvim 
+pip3 install pyyaml
 
 # yay
 git clone https://aur.archlinux.org/yay.git $home/yay
 chown hughie:root -R $home/yay
 cd yay
-sudo -u hughie makepkg -si
+makepkg -si
 
-sudo yay -u hughie -S  \
+yay -S  \
 brave-beta-bin \
 mutt-wizard \
 nerd-fonts \
