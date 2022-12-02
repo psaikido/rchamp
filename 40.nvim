@@ -10,9 +10,9 @@ git clone https://bitbucket.org/psaikido/neovim $home/neovim
 FILE=$home/.config/nvim
 if test -e "$FILE"; then
     mv $FILE $FILE.bk
-else
-    ln -s $home/neovim $home/.config/nvim
 fi
+[ ! -d $home/.config/nvim ] 
+ln -s $home/neovim $home/.config/nvim
 
 mkdir $home/.local/share/nvim/site/pack/packer/start
 
