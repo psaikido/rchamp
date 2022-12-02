@@ -1,0 +1,11 @@
+#!/bin/bash
+
+home='/home/hughie'
+cd $home
+
+# https://www.calcurse.org/files/calcurse-caldav.html
+pacman -S calcurse 
+
+pip3 install --user httplib2 
+
+chown hughie:hughie -R $home 

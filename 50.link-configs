@@ -69,6 +69,7 @@ FILE=$home/.config/ranger/rc.conf
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
 fi
+[ ! -d $home/.config/ranger ] && sudo -u hughie mkdir $home/.config/ranger
 ln -s $home/dotfiles/configs/rc.conf $home/.config/ranger/rc.conf
 
 FILE=$home/.config/ranger/rifle.conf
@@ -82,12 +83,24 @@ FILE=$home/.config/mutt/muttrc
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
 fi
+[ ! -d $home/.config/mutt ] && sudo -u hughie mkdir $home/.config/mutt
 ln -s $home/dotfiles/mutt $home/.config/mutt
 
+# calcurse
+FILE=$home/.config/calcurse/caldav/config
+if test -f "$FILE"; then
+    mv $FILE $FILE.bk
+fi
+[ ! -d $home/.config/calcurse ]
+ln -s $home/dotfiles/calcurse $home/.config/calcurse
+
+# remap keys change caps lock to another escape
 FILE=$home/.local/bin/remaps
 if test -f "$FILE"; then
     mv $FILE $FILE.bk
 fi
+[ ! -d $home/.local ] && sudo -u hughie mkdir $home/.local
+[ ! -d $home/.local/bin ] && sudo -u hughie mkdir $home/.local/bin
 ln -s ~/dotfiles/local/bin/remaps ~/.local/bin/remaps
 
 chown hughie:hughie -R $home
