@@ -50,6 +50,7 @@ xcape \
 xclip \
 xdotool \
 xorg  \
+xf86-video-intel \
 zathura \
 zathura-pdf-mupdf 
 
