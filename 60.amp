@@ -4,13 +4,14 @@ home='/home/hughie'
 cd $home
 
 # https://ostechnix.com/install-apache-mariadb-php-lamp-stack-on-arch-linux-2016/
-sudo pacman -S mysql php7 php7-apache phpmyadmin
+sudo pacman -S php7 php7-apache phpmyadmin
 sudo systemctl enable httpd
 
 # The above php install gives you php version 8 (/usr/bin/php) and a separate version 7 (/usr/bin/php7). I moved 'php' to 'php8' and then 'php7' to 'php'.
 
 yay -S mysql55
 sudo systemctl enable mysqld
+sudo systemctl start mysqld
 
 # sudo setfacl -m "u:http:--x" /home/hughie
 # chmod 775 -R ~/sites/chanadmin
@@ -32,6 +33,8 @@ sudo mysql_secure_installation
 # edit /etc/php/php.ini
 # uncomment bz2, curl, iconv, mysqli, pdo_mysql
 # ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('root');
+
+sudo pacman -S phpmyadmin
 # create /etc/httpd/conf/extra/phpmyadmin.conf
 #  add
 # Alias /phpmyadmin "/usr/share/webapps/phpMyAdmin"
