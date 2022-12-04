@@ -8,6 +8,7 @@ sudo pacman -S php7 php7-apache phpmyadmin
 sudo systemctl enable httpd
 
 # The above php install gives you php version 8 (/usr/bin/php) and a separate version 7 (/usr/bin/php7). I moved 'php' to 'php8' and then 'php7' to 'php'.
+# The ini file remains at /etc/php7/php.ini
 
 yay -S mysql55
 sudo systemctl enable mysqld
