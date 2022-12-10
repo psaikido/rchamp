@@ -5,14 +5,7 @@ cd $home
 
 pacman -S neovim 
 
-git clone https://bitbucket.org/psaikido/neovim $home/neovim
-
-FILE=$home/.config/nvim
-if test -e "$FILE"; then
-    mv $FILE $FILE.bk
-fi
-[ ! -d $home/.config/nvim ] 
-ln -s $home/neovim $home/.config/nvim
+git clone https://bitbucket.org/psaikido/neovim $home/.config/nvim
 
 mkdir $home/.local/share/nvim/site/pack/packer/start
 
