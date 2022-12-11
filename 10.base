@@ -21,6 +21,7 @@ acpi \
 alsa-utils \
 bluez \
 bluez-utils \
+cronie \
 cups \
 dialog \
 dosfstools \
