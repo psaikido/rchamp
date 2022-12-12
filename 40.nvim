@@ -1,19 +1,9 @@
 #!/bin/bash
 
-home='/home/hughie'
-cd $home
+#home='/home/hughie'
+#cd $home
 
 pacman -S neovim 
-
-git clone https://bitbucket.org/psaikido/neovim $home/.config/nvim
-
-mkdir $home/.local/share/nvim/site/pack/packer/start
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-$home/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-#nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
-
 npm install -g neovim
 
-chown hughie:hughie -R $home 
+#chown hughie:hughie -R $home 

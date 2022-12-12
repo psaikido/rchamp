@@ -1,13 +1,14 @@
 #!/bin/bash
 #
-home='/home/hughie'
-cd $home
+#home='/home/hughie'
+#cd $home
 
 # gui.sh
 pacman -S \
 alacritty \
 bat \
 chromium \
+cronie \
 exa \
 firefox \
 feh \
@@ -20,6 +21,7 @@ libdvdread \
 libreoffice \
 lua \
 lxappearance \
+lynx \
 mupdf \
 neofetch \
 neomutt \
@@ -46,6 +48,7 @@ tmux \
 virtualbox \
 virtualbox-guest-iso \
 virtualbox-host-modules-arch \
+vlc \
 w3m \
 xcape \
 xclip \
@@ -55,4 +58,4 @@ xf86-video-intel \
 zathura \
 zathura-pdf-mupdf 
 
-chown hughie:hughie -R $home 
+#chown hughie:hughie -R $home 

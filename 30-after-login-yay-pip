@@ -1,8 +1,5 @@
 #!/bin/bash
 
-home='/home/hughie'
-cd $home
-
 pip3 install --upgrade pynvim 
 pip3 install pyyaml ueberzug
 
@@ -13,13 +10,15 @@ cd yay
 makepkg -si
 
 yay -S  \
+abook \
 brave-beta-bin \
 conky-cairo \
+gotop \
 mutt-wizard \
 nerd-fonts \
+pam-gnupg \
 python-pynvim \
 ranger \
 ttf-font-awesome-5 \
 twmn-git
 
-chown hughie:hughie -R $home

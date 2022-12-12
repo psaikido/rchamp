@@ -7,10 +7,10 @@
 # git clone https://bitbucket.org/psaikido/rchamp.
 # Run these scripts.
 
-home='/home/hughie'
-cd $home
-mkdir $home/.config
-mkdir $home/.local
+#home='/home/hughie'
+#cd $home
+#mkdir $home/.config
+#mkdir $home/.local
 
 # base.sh
 pacman -Syyy 
@@ -30,8 +30,9 @@ linux-headers \
 mtools \
 network-manager-applet \
 networkmanager \
-pulseaudio \
-pulseaudio-bluetooth \
+pipewire \
+pipewire-pulse \
+pipewire-media-session \
 reflector \
 rsync \
 xdg-user-dirs 
@@ -40,4 +41,4 @@ systemctl enable NetworkManager
 systemctl enable sshd
 systemctl enable reflector.timer
 
-chown hughie:hughie -R $home 
+#chown hughie:hughie -R $home 

@@ -23,17 +23,19 @@
 - initialise  
     `pacman -Sy`
     `pacman -S git vim`
-    `git clone https://bitbucket.org/psaikido/rchamp`  
+    `git clone https://github.com/psaikido/rchamp`  
 
 - Run
     `archinstall`
 
 - After the installer runs it should arch-chroot you in to the new root.
-    `cd /home/hughie`
+If there's a whole disk with your home directory then tell /etc/fstab about it,
+mount it at /home/[user] and rename /home/[user] to avoid a conflict.
+If there are new partitions then run blkid on /dev/sd[xx] to get their uuids to put in /etc/fstab
 
 - Either get rchamp from the liveiso you've just come from or get it again with the 'initialise' commands above.
 
-- Run from the new /home/hughie
+- Run from the new /home/[user]
     `rchamp/10.base`
     `rchamp/20.gui`
 
@@ -43,7 +45,8 @@ If there's no internet connection try
 `nmtui` or 
 `nm-applet`
 
-- Run from the new /home/hughie
+- If there is already a /home/[user]* disk then edit these scripts to avoid overwriting configs.
+If not then:
     `rchamp/30.after-login-yay-pip`
     `rchamp/40.nvim`
     `rchamp/50.link-configs`
@@ -54,12 +57,14 @@ If there's no internet connection try
     Get keys and stuff from a usb
     Set up ssh, pgp, addressbook and so forth
     Careful line by line through rchamp/60.amp
+    https://github.com/cruegge/pam-gnupg
 
+*NB:  
 Optionally, depending on the machine, the plan now is to use a second disk, 
 /dev/sdb, for the home directory
-and the current home (installed on /dev/sda as /home/hughie) as the backups dir.
+and the current home (installed on /dev/sda as /home/[user]) as the backups dir.
 We should have sda as the boot, root and backups disk
-and sdb as /home/hughie.
+and sdb as /home/[user].
 Twiddle /etc/fstab using lsblk and blkid to set it up.
 Check rchamp/example-fstab.
 

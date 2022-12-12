@@ -1,8 +1,5 @@
 #!/bin/bash
 
-home='/home/hughie'
-cd $home
-
 # https://ostechnix.com/install-apache-mariadb-php-lamp-stack-on-arch-linux-2016/
 sudo pacman -S php7 php7-apache phpmyadmin
 sudo systemctl enable httpd
@@ -52,4 +49,3 @@ sudo systemctl restart httpd
 
 # Add symlinks to sites in /srv/http
 
-chown hughie:hughie -R $home 
