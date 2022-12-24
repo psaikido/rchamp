@@ -1,0 +1,99 @@
+Make a bootable usb from a dowloaded iso:
+	sudo dd bs=4M if=linuxmint-18.1-cinnamon-64bit.iso.torrent of=/dev/sdc conv=fdatasync
+..or mint has a disk write utility which pops up when you download an iso.
+
+Boot from usb and install mint.
+Mint on /dev/sda1
+bunsenlabs on /dev/sda2
+/data is /dev/sdb1
+/bkp is /dev/sdb2
+
+Arrange disks with editing /etc/fstab.
+After the reboot I'm seeing / mounted with 'errors=remount-ro'.
+I edit it to:
+
+UUID=df49ffb0-2170-48a1-9cf1-bb5c08f5a3fc /               ext4    defaults,relatime 0       1
+UUID=137510af-9083-4f75-b900-56267f76ab82 /data           ext4    defaults        0       2
+UUID=6300d117-b3f2-4288-8577-c75565de4585 /bkp            ext4    defaults        0       0
+UUID=2c67c5d8-fdf4-4927-be94-01122cedc5b8 none            swap    sw              0       0
+
+Use blkid to get UUID.
+For info:
+  sudo fdisk -l
+
+Reboot.
+
+sudo -i
+
+Software:
+    add-apt-repository ppa:neovim-ppa/stable
+    apt-get update
+    apt-get install neovim
+
+To have 'vi' actually start neovim:
+    .bash_alias:
+    alias vi='nvim'
+
+apt install git
+
+Lamp stack:
+	sudo apt install apache2
+    tarball install mysql-server (5.5.62)
+
+    apt install phpmyadmin
+    ..add 'Include /etc/phpmyadmin/apache.conf' to /etc/apache2/apache2.conf
+
+    20190620
+    From https://www.rosehosting.com/blog/how-to-install-php-7-2-on-ubuntu-16-04/
+    sudo add-apt-repository -y ppa:ondrej/php
+    sudo apt update
+    sudo apt install php7.2
+
+    ..now we need the php extensions:
+    sudo apt install php7.2-mysql
+    sudo apt install php-mcrypt
+    sudo apt install php7.2-curl
+    sudo apt install php-xdebug
+    sudo apt install php7.2-mbstring
+    sudo apt install php7.2-simplexml
+        
+
+To get behat going we need java and an old version of firefox:
+	sudo apt install openjdk-8-jre
+    cd /usr/lib
+    sudo mv firefox firefox.[xx]
+    sudo cp -R ~/installs/firefox .
+    cd /usr/bin
+    sudo mv firefox firefox.orig
+    sudo ln -s ../lib/firefox/firefox firefox
+
+
+20180821 upgrade mint to Tara
+20190625 running headless behat in mint is giving weird
+buggy results. Move to bunsenlabs.
+
+20190630
+    bunsenlabs helium
+    bl - ChromeDriver 73.0.3683.75
+    mint - ChromeDriver 2.24.417424 (c5c5ea873213ee72e3d0929b47482681555340c3) 
+
+    bl
+    Reverse touchpad scrolling. Edit /usr/share/X11/xorg.conf.d/40-libinput.conf
+    Add:
+        Option "NaturalScrolling" "true"
+
+    numlock:
+    sudo apt install numlockx
+    edit ~/.config/openbox/autostart adding:
+    numlockx on
+
+20190906
+    All the bl settings above failed after a reboot and had to be reset :<
+    For terminator start size open:
+        ~/.config/terminator/config
+
+    ..find  
+        [[[window0]]]
+    ..section and edit the 'size' line:
+      size = 1280, 635
+
